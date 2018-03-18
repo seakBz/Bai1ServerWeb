@@ -1,0 +1,34 @@
+﻿@using Baitap1_Server.Models;
+@{
+
+    ViewBag.Title = "XuLy";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+
+}
+@{
+    BaiTap DataResponts = new BaiTap();
+    DataResponts = (BaiTap)ViewData["Data"];
+    string TextToFile = (string)ViewBag.Destrip;
+}
+<div class="container">
+    @if (!(DataResponts == null || TextToFile == null))
+    {
+        <div class="row">
+            <div class="col-md-12"> Điểm: @DataResponts.DiemHK</div>
+        </div>
+        <div class="row">
+            <div class="col-md-12">
+                <img class="img-responsive" src="@DataResponts.LinkImg" />
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-12"> <p>@TextToFile</p></div>
+        </div>
+    }
+    else
+    {
+        <div class="row">
+            <div class="col-md-12"> <h1 class="text-center">404 Not Found</h1></div>
+        </div>
+    }
+</div>
