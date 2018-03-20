@@ -11,18 +11,30 @@
     string TextToFile = (string)ViewBag.Destrip;
 }
 <div class="container">
+    <br />
+    <br />
     @if (!(DataResponts == null || TextToFile == null))
     {
         <div class="row">
-            <div class="col-md-12"> Điểm: @DataResponts.DiemHK</div>
-        </div>
-        <div class="row">
             <div class="col-md-12">
-                <img class="img-responsive" src="@DataResponts.LinkImg" />
+                <h4 class="text-center">  Điểm: <span class="badge">@DataResponts.DiemHK</span></h4>
             </div>
         </div>
+        <br />
+        <br />
         <div class="row">
-            <div class="col-md-12"> <p>@TextToFile</p></div>
+            <div class="col-md-12">
+                <img class="img-responsive img-thumbnail" src="@DataResponts.LinkImg" />
+            </div>
+        </div>
+        <br />
+        <br />
+        <div class="row">
+            <div class="col-md-12">
+                <div class="jumbotron" style="font-size: 14px;">
+                    <p>@TextToFile</p>
+                </div>
+            </div>
         </div>
     }
     else
